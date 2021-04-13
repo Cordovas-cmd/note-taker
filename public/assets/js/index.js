@@ -62,6 +62,35 @@ const handleNoteSave = function () {
   });
 };
 
+//Function for deleting a note that's clicked
+const handleNoteDelete = function (event) {
+  // prevents the click listener
+  event.stopPropagation();
+
+  const note = $(this).parent(".list-group-item").data();
+
+  if (activeNote.id === note.id) {
+    activeNote = {};
+  }
+
+  deleteNote(note.id).then(() => {
+    getAndRenderNotes();
+    renderActiveNote();
+  });
+};
+
+// Sets and displays the note that's active
+const handleNoteView = function () {
+  activeNote = $(this).data();
+  renderActiveNote();
+};
+
+//Active note is an empty object allows user to enter new one
+const handleNewNoteView = function () {
+  activeNote = {};
+  renderActiveNote();
+};
+
 
 
 // if (window.location.pathname === '/notes') {

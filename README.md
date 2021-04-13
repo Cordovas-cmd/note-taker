@@ -19,6 +19,8 @@
   Make notes and read them using an Express server and node. Can create, save, and delete notes.
 
   ## Installation
+
+  ![Directions to start]()
   This program runs in the browser. You can also install it and run it on localhost:3000)
 
   ## Usage

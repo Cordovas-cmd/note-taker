@@ -18,7 +18,7 @@ const path = require('path');
 
 //Setting up filepaths
 
-
+//Get and send response
 app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, './public/notes.html'));
   });
@@ -26,4 +26,14 @@ app.get("/notes", function (req, res) {
   app.get("/api/notes", function (req, res) {
     res.sendFile(path.join(__dirname, './db/db.json'))
   });
-  
+
+// post to path
+//set up new variables based on data
+  app.post("/api/notes", function (req, res) {
+    let newNote = req.body;
+    let myId = (archive.length).toString();
+    newNote.id = myId;
+    archive.push(newNote);
+    fs.writeFileSync('./db/db.json', JSON.stringify(archive));
+    res.json(archive);
+  });

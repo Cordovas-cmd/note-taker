@@ -4,6 +4,34 @@ const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
 
+//One let keeps track of active not in textarea
+let activeNote = {};
+
+//function to get all notes from DB
+const getNotes = () => {
+  return $.ajax({
+    url: "/api/notes",
+    method: "GET",
+  });
+};
+
+// Will save notes to the DB
+const saveNote = (note) => {
+  return $.ajax({
+    url: "/api/notes",
+    data: note,
+    method: "POST",
+  });
+};
+
+//Deletes a not from the DB
+const deleteNote = (id) => {
+  return $.ajax({
+    url: "api/notes/" + id,
+    method: "DELETE",
+  });
+};
+
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');

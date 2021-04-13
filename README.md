@@ -20,7 +20,9 @@
 
   ## Installation
 
-  ![Directions to start]()
+  ![Directions to start](https://github.com/Cordovas-cmd/note-taker/blob/main/Screenshot%20(1757).png)
+  Install express and node using 
+  npm i -y and npm i express .
   This program runs in the browser. You can also install it and run it on localhost:3000)
 
   ## Usage

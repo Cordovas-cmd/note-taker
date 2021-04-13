@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Cordovas-cmd/note-taker#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "inquirer": "^8.0.0"
   }
 }

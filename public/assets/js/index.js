@@ -92,6 +92,18 @@ const handleNewNoteView = function () {
 };
 
 
+// Won't allow an empty title or text, hides save button if so
+// Or show it when filled
+const handleRenderSaveBtn = function () {
+  if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
+    $saveNoteBtn.hide();
+  } else {
+    $saveNoteBtn.show();
+  }
+};
+
+
+
 
 // if (window.location.pathname === '/notes') {
 //   noteTitle = document.querySelector('.note-title');

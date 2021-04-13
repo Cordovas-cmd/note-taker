@@ -4,7 +4,7 @@
 
   [heroku]()
 
-  ![Include a screenshot](Screenshot (1756).png)
+  ![Include a screenshot](https://github.com/Cordovas-cmd/note-taker/blob/main/Screenshot%20(1756).png)
 
   ## Table of Contents
 * [Introduction](#introduction)

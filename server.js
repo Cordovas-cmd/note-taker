@@ -37,3 +37,29 @@ app.get("/notes", function (req, res) {
     fs.writeFileSync('./db/db.json', JSON.stringify(archive));
     res.json(archive);
   });
+
+  //bonus Allows user to delete notes
+
+  app.delete("/api/notes/:id", function (req, res) {
+    let deleteId = req.params.id;
+    let newArchive = archive.filter(obj => obj.id != deleteId);
+    archive = newArchive;
+    //clears 
+    let newId= 0;
+    for(obj in archive) {
+      obj.id= newId.toString();
+      newId++;
+    }
+    fs.writeFileSync('./db/db.json', JSON.stringify(archive));
+    res.json(archive);
+  });
+
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+  });
+  // Listener sets everything off
+
+app.listen(PORT, function () {
+    console.log("App listening on PORT " + PORT);
+  });
+  
